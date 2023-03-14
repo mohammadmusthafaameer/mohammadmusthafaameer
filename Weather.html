@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="file:///D:/Mus_Project/WeatherAPI/Weather.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f1f1f1;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .search input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .search button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    
+    .search button:hover {
+      background-color: #3e8e41;
+    }
+    
+    .weather {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .weather .location {
+      font-size: 28px;
+    }
+    
+    .weather .icon {
+      font-size: 48px;
+    }
+    
+    .weather .temperature {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      
+      .search {
+        flex-direction: column;
+      }
+      
+      .search input[type="text"] {
+        margin-bottom: 10px;
+      }
+      
+      .weather {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .weather .icon {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Weather App</h1>
+    </div>
+    <div class="search">
+      <input type="text" id="location" onkeyup="Change(this)" placeholder="Enter location">      
+      <button id="btn_search">Search</button>
+    </div>
+    <div class="weather">
+      <div class="location" id="location_bind"></div>
+      <div class="icon">
+        <img/>       
+      </div>
+      <div class="temperature" id="temp"></div>
+      <div class="Condition" id="Condition"></div>
+    </div>
+  </div>
+</body>
+</html>
